@@ -1,0 +1,31 @@
+<div class="user-list-container">
+<h2>Users</h2>
+
+
+<p *ngIf="users.length === 0" class="no-users">No users registered yet.</p>
+
+<table class="customTable">
+  <thead>
+    <tr >
+      <th>Username</th>
+      <th>First Name</th>
+      <th>Password Weakness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" (click)="deleteUser(user.username)">
+      <td>{{ user.username }}</td>
+      <td>{{ user.firstname }}</td>
+      <td  *ngIf="user.password.length < 6" class="password-warning">Weak password</td>
+    </tr>
+   
+  </tbody>
+</table>
+
+
+
+
+
+
+
+</div>
